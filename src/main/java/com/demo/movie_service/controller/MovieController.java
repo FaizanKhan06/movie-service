@@ -17,6 +17,8 @@ import org.springframework.web.bind.annotation.RestController;
 import com.demo.movie_service.pojo.MoviePojo;
 import com.demo.movie_service.service.MovieService;
 
+import jakarta.validation.Valid;
+
 @RestController
 @RequestMapping("/api/movies")
 public class MovieController {
@@ -35,12 +37,12 @@ public class MovieController {
     }
 
     @PostMapping("")
-    public ResponseEntity<MoviePojo> addMovie(@RequestBody MoviePojo newMovie){
+    public ResponseEntity<MoviePojo> addMovie(@RequestBody @Valid MoviePojo newMovie){
         return new ResponseEntity<MoviePojo>(service.addMovie(newMovie), HttpStatus.OK);
     }
 
     @PutMapping("")
-    public ResponseEntity<MoviePojo> updateMovie(@RequestBody MoviePojo newMovie){
+    public ResponseEntity<MoviePojo> updateMovie(@RequestBody @Valid MoviePojo newMovie){
         return new ResponseEntity<MoviePojo>(service.updateMovie(newMovie), HttpStatus.OK);
     }
 
