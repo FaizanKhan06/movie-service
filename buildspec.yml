@@ -29,7 +29,7 @@ phases:
       - echo $DOCKER_CONTAINER_NAME
       - echo printing imagedefinitions.json
       - cat imagedefinitions.json
-  artifacts:
-    files:
-      - imagedefinitions.json
-      - target/movie-service-0.0.1-SNAPSHOT.jar
+artifacts:
+  files:
+    - imagedefinitions.json
+    - target/movie-service-0.0.1-SNAPSHOT.jar
